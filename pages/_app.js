@@ -1,11 +1,42 @@
 import '../styles/globals.css';
-import { NextUIProvider } from '@nextui-org/react';
+import { createTheme, NextUIProvider, globalCss } from '@nextui-org/react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import '@fontsource/inter';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/variable.css';
+
+const globalStyles = globalCss({
+  html: {
+    backgroundColor: '#000', //fix blend-mode on mobile, has no effect in ui!
+  },
+});
+
+const lightTheme = createTheme({
+  type: 'light',
+  theme: {},
+});
+
+const darkTheme = createTheme({
+  type: 'dark',
+  theme: {},
+});
 
 function MyApp({ Component, pageProps }) {
+  globalStyles();
   return (
-    <NextUIProvider>
-      <Component {...pageProps} />
-    </NextUIProvider>
+    <NextThemesProvider
+      defaultTheme="dark"
+      attribute="class"
+      value={{
+        light: lightTheme.className,
+        dark: darkTheme.className,
+      }}
+      enableSystem={false}
+    >
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
+    </NextThemesProvider>
   );
 }
 
