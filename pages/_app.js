@@ -19,7 +19,7 @@ const lightTheme = createTheme({
   type: 'light',
   className: 'light',
   theme: {
-    // fonts
+    fonts,
   },
 });
 
