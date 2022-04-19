@@ -1,4 +1,3 @@
-import '../styles/globals.css';
 import { createTheme, NextUIProvider, globalCss } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import '@fontsource/inter';
@@ -11,14 +10,21 @@ const globalStyles = globalCss({
   },
 });
 
+const fonts = {
+  sans: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+};
+
 const lightTheme = createTheme({
   type: 'light',
-  theme: {},
+  className: 'light',
+  theme: { fonts },
 });
 
 const darkTheme = createTheme({
   type: 'dark',
-  theme: {},
+  className: 'dark',
+  theme: { fonts },
 });
 
 function MyApp({ Component, pageProps }) {
