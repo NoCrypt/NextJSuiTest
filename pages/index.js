@@ -9,7 +9,6 @@ const App = () => {
 
   return (
     <div>
-      The current theme is: {type}
       <Switch
         checked={isDark}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
@@ -19,5 +18,5 @@ const App = () => {
 };
 
 export default function Home() {
-  return <App />;
+  return <div>Hello world</div>;
 }
