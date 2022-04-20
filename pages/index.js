@@ -53,13 +53,27 @@ export default function Home() {
       </Text>
       <Grid.Container gap={4} justify="center">
         <Grid>
-          <Input clearable bordered labelPlaceholder="Name" color="primary" />
+          <Input labelPlaceholder="Default" color="default" />
         </Grid>
         <Grid>
-          <Input clearable bordered labelPlaceholder="Name" color="primary" />
+          <Input labelPlaceholder="Primary" color="primary" />
         </Grid>
+        <Grid>
+          <Input labelPlaceholder="Secondary" color="secondary" />
+        </Grid>
+        <Grid>
+          <Input labelPlaceholder="Success" color="success" />
+        </Grid>
+        <Grid>
+          <Input labelPlaceholder="Warning" color="warning" />
+        </Grid>
+        <Grid>
+          <Input labelPlaceholder="Error" color="error" />
+        </Grid>
+        <Button shadow color="primary">
+          Has
+        </Button>
       </Grid.Container>
-      <App />
     </Container>
   );
 }
