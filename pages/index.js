@@ -49,7 +49,7 @@ export default function Home() {
           },
         }}
       >
-        Form NextUI
+        thatcardmaker
       </Text>
       <Grid.Container gap={4} justify="center">
         <Grid>
